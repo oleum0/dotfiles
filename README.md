@@ -1,3 +1,3 @@
 personal dotfiles
 
--[ ] add install script 
+- [ ] add install script 
