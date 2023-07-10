@@ -66,7 +66,7 @@ bindsym $mod+b exec --no-startup-id firefox
 # sceenlock
 
 # start program launcher
-bindsym $mod+p exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -121,6 +121,7 @@ for_window [class="Nemo"] floating enable, resize set 960 540
 for_window [class="Lxappearance"] floating enable
 for_window [class="Lxtask"] floating enable
 for_window [class="Lxmusic"] floating enable
+for_window [class="Gpicview"] floating enable
 
 
 # focus the child container
@@ -208,8 +209,8 @@ gaps outer 10
 # gaps top 42
 
 # Screenshot
-bindsym $mod+Shift+s exec "scrot -sm ~/Pictures/screenshots/$(date '+%s').png"
-bindsym $mod+s exec "scrot ~/Pictures/screenshots/$(date '+%s').png"
+bindsym $mod+Ctrl+d exec "scrot -s ~/Pictures/screenshots/$(date '+%s').png"
+# bindsym $mod+s exec "scrot ~/Pictures/screenshots/$(date '+%s').png"
 
 # Screenrecord
 bindsym $mod+Ctrl+r exec "ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 ~/Videos/$(date '+%s').mp4"
@@ -220,5 +221,4 @@ bindsym $mod+w exec bash /home/ola/look.sh
 # Autostart
 exec --no-startup-id xrandr --output Virtual1 --mode 1920x1080
 # exec --no-startup-id polybar 
-# exec --no-startup-id picom
 exec --no-startup-id bash /home/ola/look.sh
